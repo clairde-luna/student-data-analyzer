@@ -1,3 +1,5 @@
+import csv
+
 students = [
     {
         "name": "Alice",
@@ -51,5 +53,21 @@ def calculate_average(field):
 
     return average
 
-calculate_average_score()
-calculate_average_study_hours()
+def load_students():
+    # empty list
+    students = []
+    # opens students.csv in read mode
+    with open("students.csv", "r") as file:
+        
+        reads each row as a dictionary, column names are the keys
+        reader = csv.DictReader(file)
+        
+        for row in reader:
+            # adding students info to the list
+            students = {
+                "name": row["name"],
+                "study_hours": int(row["study_hours"])
+                "exam_score": int(row["exam_score"])
+            }
+            students.append(student)
+    return students
