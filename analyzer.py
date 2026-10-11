@@ -39,20 +39,17 @@ def calculate_average_study_hours():
     print(f"Average study hours: {average_study_hours:.2f} hours")
 
 def calculate_average(field):
+    if not students:
+        return None
+
     total = 0
+
     for student in students:
         total += student[field]
 
     average = total / len(students)
 
-    if field == "exam_score":
-        label = "exam score"
-    elif field == "study_hours":
-        label == "study hours"
-    print(f"Average {field}: {average:.2f}")
-
-def greet(name):
-    print(f"Hello, {name}!")
+    return average
 
 calculate_average_score()
 calculate_average_study_hours()
