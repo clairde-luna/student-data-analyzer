@@ -71,3 +71,21 @@ def load_students():
             }
             students.append(student)
     return students
+
+def find_highest_score():
+    if not students:
+        return None
+    highest_student = students[0]
+    for student in students:
+        if student["exam_score"] > highest_student["exam_score"]:
+            highest_student = student
+    return highest_student
+
+def find_lowest_score():
+    if not students:
+        return None
+    lowest_student = students[0]
+    for student in students:
+        if student["exam_score"] < lowest_student["exam_score"]:
+            lowest_student = student
+    return lowest_student
