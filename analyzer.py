@@ -89,3 +89,19 @@ def find_lowest_score():
         if student["exam_score"] < lowest_student["exam_score"]:
             lowest_student = student
     return lowest_student
+
+def load_students():
+    students = []
+
+    with open("students.csv", "r") as file:
+        reader = csv.DictReader(file)
+
+        for row in reader:
+            try:
+                name = row["name"].strip()
+                study_hours = float(row["study_hours"])
+                exam_score = int(row["exam_score"])
+                if not name:
+                    continue
+                if study_hours < 0:
+                    continue
