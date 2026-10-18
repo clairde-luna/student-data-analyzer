@@ -2,3 +2,8 @@ name,study_hours,exam_score
 Alice,12,92
 Ben,8,84
 Claire,15,96
+Daniel,10,88
+Emma,,91
+Frank,abc,79
+Grace,7,150
+,9,85
