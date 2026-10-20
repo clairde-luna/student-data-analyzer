@@ -1,5 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
+# Load CSV file
 students = pd.read_csv("students.csv")
 
 # Remove rows with missing values
@@ -25,7 +27,18 @@ students = students[
   & (students["exam_score"] <= 100)
 ]
 
-print(students)
-print("Average exam score:", students["exam_score"].mean())
-print("Highest exam score:", students["exam_score"].max())
-print("Lowest exam score:", students["exam_score"].min())
+# Creating a bar chart
+plt.bar(students["name"], students["exam_score"])
+
+plt.title("Exam Score by Student")
+plt.xlabel("Student")
+plt.ylabel("Exam Score (%)")
+
+plt.ylim(0, 100)
+
+average_score = students["exam_score"].mean()
+plt.axhline(average_score, linestyle="--", label="Class Average")
+plt.tight_layout()
+
+plt.savefig("exam_scores.png")
+plt.show()
