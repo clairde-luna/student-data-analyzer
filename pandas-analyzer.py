@@ -42,3 +42,19 @@ plt.tight_layout()
 
 plt.savefig("exam_scores.png")
 plt.show()
+
+# Compare study hours & exam scores
+plt.figure()
+
+plt.scatter(
+  students["study_hours"],
+  students["exam_score"]
+)
+
+plt.title("Study Hours v.s. Exam Scores")
+plt.xlabel("Study Hours")
+plt.ylabel("Exam Score (%)")
+
+plt.tight_layout()
+plt.savefig("study_hours_vs_scores.png")
+plt.show()
